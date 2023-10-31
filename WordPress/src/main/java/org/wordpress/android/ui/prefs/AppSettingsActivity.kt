@@ -7,6 +7,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.wordpress.android.R
 import org.wordpress.android.databinding.AppSettingsActivityBinding
 import org.wordpress.android.ui.LocaleAwareActivity
+import wordpress.rs.Library
 
 @AndroidEntryPoint
 class AppSettingsActivity : LocaleAwareActivity() {
@@ -20,7 +21,8 @@ class AppSettingsActivity : LocaleAwareActivity() {
         supportActionBar?.run {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
-            setTitle(R.string.me_btn_app_settings)
+            //setTitle(Library().addCustomFromRust(2, 3))
+            setTitle(Library().combineStringsFromRust("From", "Rust"))
         }
     }
 
