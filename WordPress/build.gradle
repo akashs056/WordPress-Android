@@ -25,6 +25,8 @@ sentry {
     autoInstallation {
         enabled = false
     }
+    uploadNativeSymbols = true
+    includeNativeSources = true
 }
 
 repositories {
@@ -339,7 +341,7 @@ kapt {
 }
 
 dependencies {
-    implementation 'org.wordpress:rs:0.0.3'
+    implementation 'org.wordpress:rs:0.0.13'
 
     implementation 'androidx.webkit:webkit:1.7.0'
     compileOnly project(path: ':libs:annotations')

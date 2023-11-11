@@ -52,15 +52,16 @@ class WPCrashLoggingDataProvider @Inject constructor(
     override val applicationContextProvider = MutableStateFlow<Map<String, String>>(emptyMap())
 
     override fun crashLoggingEnabled(): Boolean {
-        if (buildConfig.isDebug()) {
-            return false
-        }
-
-        val hasUserAllowedReporting = sharedPreferences.getBoolean(
-            resourceProvider.getString(R.string.pref_key_send_crash),
-            true
-        )
-        return hasUserAllowedReporting
+        return true
+        // if (buildConfig.isDebug()) {
+        //     return false
+        // }
+        //
+        // val hasUserAllowedReporting = sharedPreferences.getBoolean(
+        //     resourceProvider.getString(R.string.pref_key_send_crash),
+        //     true
+        // )
+        // return hasUserAllowedReporting
     }
 
     override fun extraKnownKeys(): List<ExtraKnownKey> {

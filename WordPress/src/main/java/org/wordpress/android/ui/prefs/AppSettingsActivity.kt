@@ -24,6 +24,7 @@ class AppSettingsActivity : LocaleAwareActivity() {
             //setTitle(Library().addCustomFromRust(2, 3))
             setTitle(Library().combineStringsFromRust("From", "Rust"))
         }
+        Library().crashFromRust()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
